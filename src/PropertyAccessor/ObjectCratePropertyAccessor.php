@@ -15,7 +15,7 @@ class ObjectCratePropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function hasProperty($object, string $propertyName): bool
+    public function hasProperty($object, $propertyName)
     {
         // We'll assume an object crate always has the desired property.
         return true;
@@ -24,7 +24,7 @@ class ObjectCratePropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function getProperty($object, string $propertyName)
+    public function getProperty($object, $propertyName)
     {
         return $object->{$propertyName};
     }
@@ -32,7 +32,7 @@ class ObjectCratePropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function setProperty($object, string $propertyName, $value): void
+    public function setProperty($object, $propertyName, $value)
     {
         $object->{$propertyName} = $value;
     }
@@ -40,7 +40,7 @@ class ObjectCratePropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function getPropertyNames($object): array
+    public function getPropertyNames($object)
     {
         // We could alternatively throw an error here, need some more thought.
         return [];

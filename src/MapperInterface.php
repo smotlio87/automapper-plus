@@ -23,7 +23,7 @@ interface MapperInterface
      *   An instance of class $to.
      * @throws UnregisteredMappingException
      */
-    public function map($source, string $targetClass);
+    public function map($source, $targetClass);
 
     /**
      * Maps properties of object $from to an existing object $to.

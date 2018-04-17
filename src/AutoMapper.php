@@ -34,7 +34,7 @@ class AutoMapper implements AutoMapperInterface
     /**
      * @inheritdoc
      */
-    public static function initialize(callable $configurator): AutoMapperInterface
+    public static function initialize($configurator)
     {
         $mapper = new static;
         $configurator($mapper->autoMapperConfig);
@@ -45,7 +45,7 @@ class AutoMapper implements AutoMapperInterface
     /**
      * @inheritdoc
      */
-    public function map($source, string $destinationClass)
+    public function map($source, $destinationClass)
     {
         if (is_null($source)) {
             return null;
@@ -68,7 +68,7 @@ class AutoMapper implements AutoMapperInterface
     /**
      * @inheritdoc
      */
-    public function mapMultiple($sourceCollection, string $destinationClass): array
+    public function mapMultiple($sourceCollection, $destinationClass)
     {
         return map($sourceCollection, function ($source) use ($destinationClass) {
             return $this->map($source, $destinationClass);
@@ -123,7 +123,7 @@ class AutoMapper implements AutoMapperInterface
     /**
      * @inheritdoc
      */
-    public function getConfiguration(): AutoMapperConfigInterface
+    public function getConfiguration()
     {
         return $this->autoMapperConfig;
     }
@@ -136,9 +136,9 @@ class AutoMapper implements AutoMapperInterface
      */
     protected function getMapping
     (
-        string $sourceClass,
-        string $destinationClass
-    ): MappingInterface
+        $sourceClass,
+        $destinationClass
+    )
     {
         $mapping = $this->autoMapperConfig->getMappingFor(
             $sourceClass,

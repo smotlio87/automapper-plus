@@ -14,21 +14,21 @@ interface PropertyAccessorInterface
      * @param string $propertyName
      * @return bool
      */
-    public function hasProperty($object, string $propertyName): bool;
+    public function hasProperty($object, $propertyName);
 
     /**
      * @param $object
      * @param string $propertyName
      * @return mixed
      */
-    public function getProperty($object, string $propertyName);
+    public function getProperty($object, $propertyName);
 
     /**
      * @param $object
      * @param string $propertyName
      * @param $value
      */
-    public function setProperty($object, string $propertyName, $value): void;
+    public function setProperty($object, $propertyName, $value);
 
     /**
      * Returns a list of property names available on the object.
@@ -36,5 +36,5 @@ interface PropertyAccessorInterface
      * @param object $object
      * @return string[]
      */
-    public function getPropertyNames($object): array;
+    public function getPropertyNames($object);
 }

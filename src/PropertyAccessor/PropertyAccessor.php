@@ -14,7 +14,7 @@ class PropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function hasProperty($object, string $propertyName): bool
+    public function hasProperty($object, $propertyName)
     {
         if (isset($object->{$propertyName})) {
             return true;
@@ -33,7 +33,7 @@ class PropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function getProperty($object, string $propertyName)
+    public function getProperty($object, $propertyName)
     {
         if (isset($object->{$propertyName})) {
             return $object->{$propertyName};
@@ -45,7 +45,7 @@ class PropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function setProperty($object, string $propertyName, $value): void
+    public function setProperty($object, $propertyName, $value)
     {
         if ($this->isPublic($object, $propertyName)) {
             $object->{$propertyName} = $value;
@@ -58,7 +58,7 @@ class PropertyAccessor implements PropertyAccessorInterface
     /**
      * @inheritdoc
      */
-    public function getPropertyNames($object): array
+    public function getPropertyNames($object)
     {
         return map((array) $object, function ($_, $name) {
             return $this->getRealName($name);
@@ -73,7 +73,7 @@ class PropertyAccessor implements PropertyAccessorInterface
      * @param string $propertyName
      * @return mixed
      */
-    protected function getPrivate($object, string $propertyName)
+    protected function getPrivate($object, $propertyName)
     {
         $objectArray = (array) $object;
         foreach ($objectArray as $name => $value) {
@@ -92,7 +92,7 @@ class PropertyAccessor implements PropertyAccessorInterface
      * @param string $propertyName
      * @param $value
      */
-    protected function setPrivate($object, string $propertyName, $value): void
+    protected function setPrivate($object, $propertyName, $value)
     {
         $setter = function($value) use ($propertyName) {
             $this->{$propertyName} = $value;
@@ -108,7 +108,7 @@ class PropertyAccessor implements PropertyAccessorInterface
      * @param string $propertyName
      * @return bool
      */
-    private function isPublic($object, string $propertyName)
+    private function isPublic($object, $propertyName)
     {
         $objectArray = (array) $object;
 
@@ -119,7 +119,7 @@ class PropertyAccessor implements PropertyAccessorInterface
      * @param string $propertyName
      * @return string
      */
-    private function getRealName(string $propertyName): string
+    private function getRealName($propertyName)
     {
         return preg_replace('/\x00.*\x00/', '', $propertyName);
     }

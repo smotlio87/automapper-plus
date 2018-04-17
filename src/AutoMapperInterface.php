@@ -19,7 +19,7 @@ interface AutoMapperInterface extends MapperInterface
      * @return array
      *   An array of mapped objects. Keys are not preserved.
      */
-    public function mapMultiple($sourceCollection, string $targetClass): array;
+    public function mapMultiple($sourceCollection, $targetClass);
 
     /**
      * Instantiate the mapper with a given configuration callback. The callback
@@ -34,12 +34,12 @@ interface AutoMapperInterface extends MapperInterface
      * @param callable $configurator
      * @return AutoMapperInterface
      */
-    public static function initialize(callable $configurator): AutoMapperInterface;
+    public static function initialize($configurator);
 
     /**
      * Returns the configuration object for the mapper.
      *
      * @return AutoMapperConfigInterface
      */
-    public function getConfiguration(): AutoMapperConfigInterface;
+    public function getConfiguration();
 }
