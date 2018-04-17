@@ -31,7 +31,8 @@ class MapFrom extends DefaultMappingOperation
      */
     protected function getSourceValue($source, $propertyName)
     {
-        return ($this->valueCallback)($source);
+        $valueCallback = ($this->valueCallback);
+        return $valueCallback($source);
     }
 
     /**
