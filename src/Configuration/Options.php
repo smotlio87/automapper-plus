@@ -64,7 +64,7 @@ class Options
      * Note: the skipConstructor default will be replaced by dontSkipConstructor
      *       in the next major release.
      */
-    public static function default(): Options
+    public static function defaults()
     {
         $options = new static;
         $options->skipConstructor();
@@ -79,7 +79,7 @@ class Options
     /**
      * @return NamingConventionInterface|null
      */
-    public function getSourceMemberNamingConvention(): ?NamingConventionInterface
+    public function getSourceMemberNamingConvention()
     {
         return $this->sourceMemberNamingConvention;
     }
@@ -90,7 +90,7 @@ class Options
     public function setSourceMemberNamingConvention
     (
         NamingConventionInterface $sourceMemberNamingConvention
-    ): void
+    )
     {
         $this->sourceMemberNamingConvention = $sourceMemberNamingConvention;
     }
@@ -98,7 +98,7 @@ class Options
     /**
      * @return NamingConventionInterface|null
      */
-    public function getDestinationMemberNamingConvention(): ?NamingConventionInterface
+    public function getDestinationMemberNamingConvention()
     {
         return $this->destinationMemberNamingConvention;
     }
@@ -109,7 +109,7 @@ class Options
     public function setDestinationMemberNamingConvention
     (
         NamingConventionInterface $destinationMemberNamingConvention
-    ): void
+    )
     {
         $this->destinationMemberNamingConvention = $destinationMemberNamingConvention;
     }
@@ -117,17 +117,17 @@ class Options
     /**
      * @return bool
      */
-    public function shouldSkipConstructor(): bool
+    public function shouldSkipConstructor()
     {
         return $this->shouldSkipConstructor;
     }
 
-    public function skipConstructor(): void
+    public function skipConstructor()
     {
         $this->shouldSkipConstructor = true;
     }
 
-    public function dontSkipConstructor(): void
+    public function dontSkipConstructor()
     {
         $this->shouldSkipConstructor = false;
     }
@@ -135,7 +135,7 @@ class Options
     /**
      * @param bool $shouldSkipConstructor
      */
-    public function setShouldSkipConstructor(bool $shouldSkipConstructor): void
+    public function setShouldSkipConstructor($shouldSkipConstructor)
     {
         $this->shouldSkipConstructor = $shouldSkipConstructor;
     }
@@ -143,7 +143,7 @@ class Options
     /**
      * @return PropertyAccessorInterface
      */
-    public function getPropertyAccessor(): PropertyAccessorInterface
+    public function getPropertyAccessor()
     {
         return $this->propertyAccessor;
     }
@@ -154,7 +154,7 @@ class Options
     public function setPropertyAccessor
     (
         PropertyAccessorInterface $propertyAccessor
-    ): void
+    )
     {
         $this->propertyAccessor = $propertyAccessor;
     }
@@ -162,7 +162,7 @@ class Options
     /**
      * @return MappingOperationInterface
      */
-    public function getDefaultMappingOperation(): MappingOperationInterface
+    public function getDefaultMappingOperation()
     {
         return $this->defaultMappingOperation;
     }
@@ -173,7 +173,7 @@ class Options
     public function setDefaultMappingOperation
     (
         MappingOperationInterface $defaultMappingOperation
-    ): void
+    )
     {
         $this->defaultMappingOperation = $defaultMappingOperation;
     }
@@ -181,7 +181,7 @@ class Options
     /**
      * @return NameResolverInterface
      */
-    public function getNameResolver(): NameResolverInterface
+    public function getNameResolver()
     {
         return $this->nameResolver;
     }
@@ -189,7 +189,7 @@ class Options
     /**
      * @param NameResolverInterface $nameResolver
      */
-    public function setNameResolver(NameResolverInterface $nameResolver): void
+    public function setNameResolver(NameResolverInterface $nameResolver)
     {
         $this->nameResolver = $nameResolver;
     }
@@ -200,7 +200,7 @@ class Options
      *
      * @return bool
      */
-    public function shouldConvertName(): bool
+    public function shouldConvertName()
     {
         return !empty($this->sourceMemberNamingConvention)
             && !empty($this->destinationMemberNamingConvention);
@@ -209,7 +209,7 @@ class Options
     /**
      * @return MapperInterface|null
      */
-    public function getCustomMapper(): ?MapperInterface
+    public function getCustomMapper()
     {
         return $this->customMapper;
     }
@@ -217,7 +217,7 @@ class Options
     /**
      * @param MapperInterface $customMapper
      */
-    public function setCustomMapper(MapperInterface $customMapper): void
+    public function setCustomMapper(MapperInterface $customMapper)
     {
         $this->customMapper = $customMapper;
     }
@@ -225,7 +225,7 @@ class Options
     /**
      * @return bool
      */
-    public function providesCustomMapper(): bool
+    public function providesCustomMapper()
     {
         return !empty($this->customMapper);
     }
@@ -233,7 +233,7 @@ class Options
     /**
      * @param string $className
      */
-    public function registerObjectCrate(string $className): void
+    public function registerObjectCrate($className)
     {
         $this->objectCrates[$className] = true;
     }
@@ -241,7 +241,7 @@ class Options
     /**
      * @param string $className
      */
-    public function removeObjectCrate(string $className): void
+    public function removeObjectCrate($className)
     {
         unset($this->objectCrates[$className]);
     }
@@ -250,7 +250,7 @@ class Options
      * @param string $className
      * @return bool
      */
-    public function isObjectCrate(string $className): bool
+    public function isObjectCrate(string $className)
     {
         return isset($this->objectCrates[$className]);
     }

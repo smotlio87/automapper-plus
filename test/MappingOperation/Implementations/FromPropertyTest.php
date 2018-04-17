@@ -17,7 +17,7 @@ class FromPropertyTest extends TestCase
     public function testItMapsAProperty()
     {
         $operation = new FromProperty('privateProperty');
-        $operation->setOptions(Options::default());
+        $operation->setOptions(Options::defaults());
 
         $source = new Visibility();
         $destination = new Destination();

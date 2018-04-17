@@ -28,7 +28,7 @@ class NameResolverTest extends TestCase
     public function testItResolvesANameToItsIdentity()
     {
         $operation = new DefaultMappingOperation();
-        $options = Options::default();
+        $options = Options::defaults();
 
         $output = $this->resolver->getSourcePropertyName('name', $operation, $options);
         $this->assertEquals('name', $output);
@@ -37,7 +37,7 @@ class NameResolverTest extends TestCase
     public function testItResolvesNamingConventions()
     {
         $operation = new DefaultMappingOperation();
-        $options = Options::default();
+        $options = Options::defaults();
         $options->setSourceMemberNamingConvention(new CamelCaseNamingConvention());
         $options->setDestinationMemberNamingConvention(new PascalCaseNamingConvention());
 
@@ -52,7 +52,7 @@ class NameResolverTest extends TestCase
     public function testItResolvesWithAnAlternativePropertyNameOperation()
     {
         $operation = new FromProperty('a_property');
-        $options = Options::default();
+        $options = Options::defaults();
 
         $output = $this->resolver->getSourcePropertyName('another', $operation, $options);
         $this->assertEquals('a_property', $output);

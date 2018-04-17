@@ -27,7 +27,7 @@ class MapFromWithMapperTest extends TestCase
         $mapFromWithMapper->setMapper(AutoMapper::initialize(function (AutoMapperConfigInterface $config) {
             $config->registerMapping(Source::class, Destination::class);
         }));
-        $mapFromWithMapper->setOptions(Options::default());
+        $mapFromWithMapper->setOptions(Options::defaults());
 
         $source = new Source();
         $destination = new Destination();
@@ -48,7 +48,7 @@ class MapFromWithMapperTest extends TestCase
         $mapFromWithMapper->setMapper(AutoMapper::initialize(function (AutoMapperConfigInterface $config) {
             $config->registerMapping(Source::class, Destination::class);
         }));
-        $mapFromWithMapper->setOptions(Options::default());
+        $mapFromWithMapper->setOptions(Options::defaults());
 
         $source = new Source();
         $destination = new Destination();

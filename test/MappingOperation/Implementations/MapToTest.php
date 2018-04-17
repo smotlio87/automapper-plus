@@ -30,7 +30,7 @@ class MapToTest extends TestCase
     public function testItCanMapToAClass()
     {
         $mapTo = new MapTo(Destination::class);
-        $mapTo->setOptions(Options::default());
+        $mapTo->setOptions(Options::defaults());
         $mapTo->setMapper(AutoMapper::initialize(function (AutoMapperConfigInterface $config) {
             $config->registerMapping(Source::class, Destination::class);
         }));
@@ -49,7 +49,7 @@ class MapToTest extends TestCase
     public function testItCanMapMultiple()
     {
         $mapTo = new MapTo(Destination::class);
-        $mapTo->setOptions(Options::default());
+        $mapTo->setOptions(Options::defaults());
         $mapTo->setMapper(AutoMapper::initialize(function (AutoMapperConfigInterface $config) {
             $config->registerMapping(Source::class, Destination::class);
         }));
@@ -76,7 +76,7 @@ class MapToTest extends TestCase
     public function testItUsesTheNameResolver()
     {
         $mapTo = new MapTo(Destination::class);
-        $options = Options::default();
+        $options = Options::defaults();
         // Set a name resolver to always use the property 'child' of the source.
         $options->setNameResolver(new CallbackNameResolver(function () {
             return 'child';

@@ -28,7 +28,7 @@ class AutoMapperConfig implements AutoMapperConfigInterface
      */
     function __construct(callable $configurator = null)
     {
-        $this->options = Options::default();
+        $this->options = Options::defaults();
         if ($configurator) {
             $configurator($this->options);
         }

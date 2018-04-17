@@ -27,7 +27,7 @@ class DefaultMappingOperationTest extends TestCase
     public function setUp()
     {
         $this->operation = new DefaultMappingOperation();
-        $this->operation->setOptions(Options::default());
+        $this->operation->setOptions(Options::defaults());
     }
 
     public function testItMapsAProperty()
@@ -43,7 +43,7 @@ class DefaultMappingOperationTest extends TestCase
 
     public function testItCanResolveNamingConventions()
     {
-        $options = Options::default();
+        $options = Options::defaults();
         $options->setSourceMemberNamingConvention(new CamelCaseNamingConvention());
         $options->setDestinationMemberNamingConvention(new SnakeCaseNamingConvention());
         $this->operation->setOptions($options);
@@ -72,7 +72,7 @@ class DefaultMappingOperationTest extends TestCase
 
     public function testItCanResolveNamingConventionsOnAStdClass()
     {
-        $options = Options::default();
+        $options = Options::defaults();
         $options->setSourceMemberNamingConvention(new SnakeCaseNamingConvention());
         $options->setDestinationMemberNamingConvention(new CamelCaseNamingConvention());
         $this->operation->setOptions($options);

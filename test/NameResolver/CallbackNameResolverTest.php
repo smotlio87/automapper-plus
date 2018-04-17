@@ -17,7 +17,7 @@ class CallbackNameResolverTest extends TestCase
         $output = $resolver->getSourcePropertyName(
             'a_property',
             Operation::ignore(),
-            Options::default()
+            Options::defaults()
         );
         $this->assertEquals('A_PROPERTY', $output);
     }
@@ -31,7 +31,7 @@ class CallbackNameResolverTest extends TestCase
         $output = $resolver->getSourcePropertyName(
             'a_property',
             Operation::fromProperty('overridden'),
-            Options::default()
+            Options::defaults()
         );
         $this->assertEquals('overridden', $output);
     }

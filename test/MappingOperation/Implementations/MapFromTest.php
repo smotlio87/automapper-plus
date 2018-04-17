@@ -20,7 +20,7 @@ class MapFromTest extends TestCase
         $operation = new MapFrom(function ($source) {
             return 42;
         });
-        $operation->setOptions(Options::default());
+        $operation->setOptions(Options::defaults());
 
         $source = new Source();
         $destination = new Destination();
@@ -35,7 +35,7 @@ class MapFromTest extends TestCase
         $operation = new MapFrom(function ($source) {
             return $source;
         });
-        $operation->setOptions(Options::default());
+        $operation->setOptions(Options::defaults());
 
         $source = new Source();
         $destination = new Destination();

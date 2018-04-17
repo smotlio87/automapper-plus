@@ -118,7 +118,7 @@ class MappingTest extends TestCase
 
         // Again, we're basically testing an exception isn't thrown.
         $operation = Operation::fromProperty('name');
-        $operation->setOptions(Options::default());
+        $operation->setOptions(Options::defaults());
         $mapping->forMember('privateProperty', $operation);
         $this->assertEquals(
             $operation,
