@@ -12,5 +12,5 @@ interface AlternativePropertyProvider
     /**
      * @return string
      */
-    public function getAlternativePropertyName(): string;
+    public function getAlternativePropertyName();
 }

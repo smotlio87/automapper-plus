@@ -198,7 +198,7 @@ class Mapping implements MappingInterface
      *
      * @todo: move this logic to a separate class.
      */
-    public function getTargetProperties($targetObject, $sourceObject): array
+    public function getTargetProperties($targetObject, $sourceObject)
     {
         // We use the property accessor defined on the config, because the one
         // in this mapping's Options might have been overridden to be the
@@ -267,7 +267,7 @@ class Mapping implements MappingInterface
     /**
      * @inheritdoc
      */
-    public function getRegisteredMappingOperations(): array
+    public function getRegisteredMappingOperations()
     {
         return $this->mappingOperations;
     }

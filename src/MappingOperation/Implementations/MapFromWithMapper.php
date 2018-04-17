@@ -23,7 +23,7 @@ class MapFromWithMapper extends MapFrom implements MapperAwareOperation
     /**
      * @inheritdoc
      */
-    protected function getSourceValue($source, string $propertyName)
+    protected function getSourceValue($source, $propertyName)
     {
         return ($this->valueCallback)($source, $this->mapper);
     }

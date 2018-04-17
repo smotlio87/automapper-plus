@@ -27,7 +27,7 @@ class MapTo extends DefaultMappingOperation implements MapperAwareOperation
      *
      * @param string $destinationClass
      */
-    public function __construct(string $destinationClass)
+    public function __construct($destinationClass)
     {
         $this->destinationClass = $destinationClass;
     }
@@ -35,7 +35,7 @@ class MapTo extends DefaultMappingOperation implements MapperAwareOperation
     /**
      * @return string
      */
-    public function getDestinationClass(): string
+    public function getDestinationClass()
     {
         return $this->destinationClass;
     }
@@ -43,7 +43,7 @@ class MapTo extends DefaultMappingOperation implements MapperAwareOperation
     /**
      * @inheritdoc
      */
-    protected function getSourceValue($source, string $propertyName)
+    protected function getSourceValue($source, $propertyName)
     {
         $value = $this->getPropertyAccessor()->getProperty(
             $source,
@@ -62,7 +62,7 @@ class MapTo extends DefaultMappingOperation implements MapperAwareOperation
      * @param $variable
      * @return bool
      */
-    private function isCollection($variable): bool
+    private function isCollection($variable)
     {
         return is_array($variable) || $variable instanceof \Traversable;
     }

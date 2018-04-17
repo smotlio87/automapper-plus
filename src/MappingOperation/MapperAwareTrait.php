@@ -19,7 +19,7 @@ trait MapperAwareTrait
     /**
      * @param AutoMapperInterface $mapper
      */
-    public function setMapper(AutoMapperInterface $mapper): void
+    public function setMapper(AutoMapperInterface $mapper)
     {
         $this->mapper = $mapper;
     }

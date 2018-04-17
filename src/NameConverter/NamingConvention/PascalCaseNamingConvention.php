@@ -14,7 +14,7 @@ class PascalCaseNamingConvention extends BaseNamingConvention
     /**
      * @inheritdoc
      */
-    public function toParts(string $name): array
+    public function toParts($name)
     {
         $parts = preg_split('/(?=[A-Z])/', $name, -1, PREG_SPLIT_NO_EMPTY);
 
@@ -24,9 +24,9 @@ class PascalCaseNamingConvention extends BaseNamingConvention
     /**
      * @inheritdoc
      */
-    public function fromParts(array $parts): string
+    public function fromParts(array $parts)
     {
-        $parts = map($parts, function (string $part) {
+        $parts = map($parts, function ($part) {
             return ucfirst($part);
         });
 

@@ -38,7 +38,7 @@ class FromProperty extends DefaultMappingOperation implements
      *
      * @param string $propertyName
      */
-    public function __construct(string $propertyName)
+    public function __construct($propertyName)
     {
         $this->propertyName = $propertyName;
     }
@@ -46,7 +46,7 @@ class FromProperty extends DefaultMappingOperation implements
     /**
      * @inheritdoc
      */
-    public function getSourcePropertyName(string $propertyName): string
+    public function getSourcePropertyName($propertyName)
     {
         return $this->propertyName;
     }
@@ -54,7 +54,7 @@ class FromProperty extends DefaultMappingOperation implements
     /**
      * @inheritdoc
      */
-    public function getAlternativePropertyName(): string
+    public function getAlternativePropertyName()
     {
         return $this->propertyName;
     }
@@ -62,7 +62,7 @@ class FromProperty extends DefaultMappingOperation implements
     /**
      * @inheritdoc
      */
-    public function mapProperty(string $propertyName, $source, $destination): void {
+    public function mapProperty($propertyName, $source, $destination) {
         if ($this->nextOperation === null) {
             parent::mapProperty($propertyName, $source, $destination);
             return;
@@ -80,9 +80,9 @@ class FromProperty extends DefaultMappingOperation implements
      */
     public function getReverseOperation
     (
-        string $originalProperty,
+        $originalProperty,
         Options $options
-    ): MappingOperationInterface
+    )
     {
         return new static($originalProperty);
     }
@@ -92,9 +92,9 @@ class FromProperty extends DefaultMappingOperation implements
      */
     public function getReverseTargetPropertyName
     (
-        string $originalProperty,
+        $originalProperty,
         Options $options
-    ): string
+    )
     {
         return $this->propertyName;
     }
@@ -111,7 +111,7 @@ class FromProperty extends DefaultMappingOperation implements
      * @param string $class
      * @return FromProperty
      */
-    public function mapTo(string $class): FromProperty
+    public function mapTo($class)
     {
         $this->nextOperation = new MapTo($class);
         return $this;
@@ -123,10 +123,10 @@ class FromProperty extends DefaultMappingOperation implements
      * @param $destination
      */
     protected function mapPropertyWithNextOperation(
-        string $propertyName,
+        $propertyName,
         $source,
         $destination
-    ): void
+    )
     {
         // We have to make the overridden property available to the next
         // operation. To do this, we create a "one-time use" name resolver
@@ -145,7 +145,7 @@ class FromProperty extends DefaultMappingOperation implements
     /**
      * @inheritdoc
      */
-    public function setMapper(AutoMapperInterface $mapper): void
+    public function setMapper(AutoMapperInterface $mapper)
     {
         if ($this->nextOperation instanceof MapperAwareOperation) {
             $this->nextOperation->setMapper($mapper);

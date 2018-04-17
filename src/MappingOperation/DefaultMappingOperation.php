@@ -20,7 +20,7 @@ class DefaultMappingOperation implements MappingOperationInterface
     /**
      * @inheritdoc
      */
-    public function mapProperty(string $propertyName, $source, $destination): void
+    public function mapProperty($propertyName, $source, $destination)
     {
         if (!$this->canMapProperty($propertyName, $source)) {
             // Alternatively throw an error here.
@@ -33,7 +33,7 @@ class DefaultMappingOperation implements MappingOperationInterface
     /**
      * @inheritdoc
      */
-    public function setOptions(Options $options): void
+    public function setOptions(Options $options)
     {
         $this->options = $options;
     }
@@ -43,7 +43,7 @@ class DefaultMappingOperation implements MappingOperationInterface
      * @param $source
      * @return bool
      */
-    protected function canMapProperty(string $propertyName, $source): bool
+    protected function canMapProperty($propertyName, $source)
     {
         $sourcePropertyName = $this->getSourcePropertyName($propertyName);
 
@@ -55,7 +55,7 @@ class DefaultMappingOperation implements MappingOperationInterface
      * @param string $propertyName
      * @return mixed
      */
-    protected function getSourceValue($source, string $propertyName)
+    protected function getSourceValue($source, $propertyName)
     {
         return $this->getPropertyAccessor()->getProperty(
             $source,
@@ -68,7 +68,7 @@ class DefaultMappingOperation implements MappingOperationInterface
      * @param string $propertyName
      * @param $value
      */
-    protected function setDestinationValue($destination, string $propertyName, $value): void
+    protected function setDestinationValue($destination, $propertyName, $value)
     {
         $this->getPropertyAccessor()->setProperty($destination, $propertyName, $value);
     }
@@ -76,7 +76,7 @@ class DefaultMappingOperation implements MappingOperationInterface
     /**
      * @return PropertyAccessorInterface
      */
-    protected function getPropertyAccessor(): PropertyAccessorInterface
+    protected function getPropertyAccessor()
     {
         return $this->options->getPropertyAccessor();
     }
@@ -87,7 +87,7 @@ class DefaultMappingOperation implements MappingOperationInterface
      * @param string $propertyName
      * @return string
      */
-    protected function getSourcePropertyName(string $propertyName): string
+    protected function getSourcePropertyName($propertyName)
     {
         return $this->options->getNameResolver()->getSourcePropertyName(
             $propertyName,

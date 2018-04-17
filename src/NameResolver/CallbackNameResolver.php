@@ -30,10 +30,10 @@ class CallbackNameResolver implements NameResolverInterface
 
     public function getSourcePropertyName
     (
-        string $targetPropertyName,
+        $targetPropertyName,
         MappingOperationInterface $operation,
         Options $options
-    ): string
+    )
     {
         // We still allow properties to be overridden if explicitly defined
         if ($operation instanceof AlternativePropertyProvider) {

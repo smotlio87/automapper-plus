@@ -12,7 +12,7 @@ class SnakeCaseNamingConvention extends BaseNamingConvention
     /**
      * @inheritdoc
      */
-    public function toParts(string $name): array
+    public function toParts($name)
     {
         return explode('_', $name);
     }
@@ -20,7 +20,7 @@ class SnakeCaseNamingConvention extends BaseNamingConvention
     /**
      * @inheritdoc
      */
-    public function fromParts(array $parts): string
+    public function fromParts(array $parts)
     {
         return implode('_', $parts);
     }

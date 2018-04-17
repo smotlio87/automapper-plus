@@ -29,7 +29,7 @@ class MapFrom extends DefaultMappingOperation
     /**
      * @inheritdoc
      */
-    protected function getSourceValue($source, string $propertyName)
+    protected function getSourceValue($source, $propertyName)
     {
         return ($this->valueCallback)($source);
     }
@@ -37,7 +37,7 @@ class MapFrom extends DefaultMappingOperation
     /**
      * @inheritdoc
      */
-    protected function canMapProperty(string $propertyName, $source): bool
+    protected function canMapProperty($propertyName, $source)
     {
         // Mapping with a callback is always possible, regardless of the source
         // properties.

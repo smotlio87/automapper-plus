@@ -15,9 +15,9 @@ abstract class BaseNamingConvention implements NamingConventionInterface
      * @param array $parts
      * @return array
      */
-    public function normalize(array $parts): array
+    public function normalize(array $parts)
     {
-        return map($parts, function (string $part) {
+        return map($parts, function ($part) {
             return strtolower($part);
         });
     }

@@ -14,7 +14,7 @@ abstract class CustomMapper implements MapperInterface
     /**
      * @inheritdoc
      */
-    public function map($source, string $targetClass)
+    public function map($source, $targetClass)
     {
         $destination = new $targetClass;
 

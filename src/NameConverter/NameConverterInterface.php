@@ -20,6 +20,6 @@ interface NameConverterInterface
     public static function convert(
         NamingConventionInterface $sourceNamingConvention,
         NamingConventionInterface $targetNamingConvention,
-        string $source
-    ): string;
+        $source
+    );
 }

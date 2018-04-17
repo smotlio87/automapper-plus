@@ -28,8 +28,8 @@ interface NameResolverInterface
      * @return string
      */
     public function getSourcePropertyName(
-        string $targetPropertyName,
+        $targetPropertyName,
         MappingOperationInterface $operation,
         Options $options
-    ): string;
+    );
 }

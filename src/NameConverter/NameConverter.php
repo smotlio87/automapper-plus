@@ -18,8 +18,8 @@ class NameConverter implements NameConverterInterface
     (
         NamingConventionInterface $sourceNamingConvention,
         NamingConventionInterface $targetNamingConvention,
-        string $source
-    ): string
+        $source
+    )
     {
         $parts = $sourceNamingConvention->toParts($source);
 

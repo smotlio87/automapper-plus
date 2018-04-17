@@ -25,9 +25,9 @@ interface Reversible
      * @return MappingOperationInterface
      */
     public function getReverseOperation(
-        string $originalProperty,
+        $originalProperty,
         Options $options
-    ): MappingOperationInterface;
+    );
 
     /**
      * In order to be able to register the mapping in the reverse direction,
@@ -38,7 +38,7 @@ interface Reversible
      * @return string
      */
     public function getReverseTargetPropertyName(
-        string $originalProperty,
+        $originalProperty,
         Options $options
-    ): string;
+    );
 }

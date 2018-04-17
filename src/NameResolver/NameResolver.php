@@ -19,10 +19,10 @@ class NameResolver implements NameResolverInterface
      */
     public function getSourcePropertyName
     (
-        string $targetPropertyName,
+        $targetPropertyName,
         MappingOperationInterface $operation,
         Options $options
-    ): string
+    )
     {
         if ($operation instanceof AlternativePropertyProvider) {
             return $operation->getAlternativePropertyName();

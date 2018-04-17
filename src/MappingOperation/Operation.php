@@ -24,7 +24,7 @@ class Operation
      * @param callable $valueCallback
      * @return MapFrom
      */
-    public static function mapFrom(callable $valueCallback): MapFrom
+    public static function mapFrom(callable $valueCallback)
     {
         return new MapFrom($valueCallback);
     }
@@ -40,7 +40,7 @@ class Operation
      *      }
      * @return MapFromWithMapper
      */
-    public static function mapFromWithMapper(callable $valueCallback): MapFromWithMapper
+    public static function mapFromWithMapper($valueCallback)
     {
         return new MapFromWithMapper($valueCallback);
     }
@@ -50,7 +50,7 @@ class Operation
      *
      * @return Ignore
      */
-    public static function ignore(): Ignore
+    public static function ignore()
     {
         return new Ignore();
     }
@@ -61,7 +61,7 @@ class Operation
      * @param string $destinationClass
      * @return MapTo
      */
-    public static function mapTo(string $destinationClass): MapTo
+    public static function mapTo($destinationClass)
     {
         return new MapTo($destinationClass);
     }
@@ -72,7 +72,7 @@ class Operation
      * @param string $propertyName
      * @return FromProperty
      */
-    public static function fromProperty(string $propertyName): FromProperty
+    public static function fromProperty($propertyName)
     {
         return new FromProperty($propertyName);
     }

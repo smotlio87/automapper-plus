@@ -17,10 +17,10 @@ interface MappingOperationInterface
      * @param $destination
      * @return void
      */
-    public function mapProperty(string $propertyName, $source, $destination): void;
+    public function mapProperty($propertyName, $source, $destination);
 
     /**
      * @param Options $options
      */
-    public function setOptions(Options $options): void;
+    public function setOptions(Options $options);
 }

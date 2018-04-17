@@ -13,11 +13,11 @@ interface NamingConventionInterface
      * @param string $name
      * @return string[]
      */
-    public function toParts(string $name): array;
+    public function toParts($name);
 
     /**
      * @param string[] $parts
      * @return string
      */
-    public function fromParts(array $parts): string;
+    public function fromParts(array $parts);
 }
