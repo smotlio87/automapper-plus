@@ -17,9 +17,9 @@ interface AutoMapperConfigInterface
      * @return bool
      */
     public function hasMappingFor(
-        string $sourceClassName,
-        string $destinationClassName
-    ): bool;
+        $sourceClassName,
+        $destinationClassName
+    );
 
     /**
      * Retrieves the mapping for the given classes.
@@ -29,9 +29,9 @@ interface AutoMapperConfigInterface
      * @return MappingInterface|null
      */
     public function getMappingFor(
-        string $sourceClassName,
-        string $destinationClassName
-    ): ?MappingInterface;
+        $sourceClassName,
+        $destinationClassName
+    );
 
     /**
      * Register a mapping between two classes. Without any additional
@@ -43,12 +43,12 @@ interface AutoMapperConfigInterface
      * @return MappingInterface
      */
     public function registerMapping(
-        string $sourceClassName,
-        string $destinationClassName
-    ): MappingInterface;
+        $sourceClassName,
+        $destinationClassName
+    );
 
     /**
      * @return Options
      */
-    public function getOptions(): Options;
+    public function getOptions();
 }

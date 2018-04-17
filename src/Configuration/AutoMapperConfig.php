@@ -39,9 +39,9 @@ class AutoMapperConfig implements AutoMapperConfigInterface
      */
     public function hasMappingFor
     (
-        string $sourceClassName,
-        string $destinationClassName
-    ): bool
+        $sourceClassName,
+        $destinationClassName
+    )
     {
         return !empty($this->getMappingFor($sourceClassName, $destinationClassName));
     }
@@ -51,9 +51,9 @@ class AutoMapperConfig implements AutoMapperConfigInterface
      */
     public function getMappingFor
     (
-        string $sourceClassName,
-        string $destinationClassName
-    ): ?MappingInterface
+        $sourceClassName,
+        $destinationClassName
+    )
     {
         return first(
             $this->mappings,
@@ -69,9 +69,9 @@ class AutoMapperConfig implements AutoMapperConfigInterface
      */
     public function registerMapping
     (
-        string $sourceClassName,
-        string $destinationClassName
-    ): MappingInterface
+        $sourceClassName,
+        $destinationClassName
+    )
     {
         $mapping = new Mapping(
             $sourceClassName,
@@ -86,7 +86,7 @@ class AutoMapperConfig implements AutoMapperConfigInterface
     /**
      * @inheritdoc
      */
-    public function getOptions(): Options
+    public function getOptions()
     {
         return $this->options;
     }

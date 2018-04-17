@@ -19,12 +19,12 @@ interface MappingInterface
     /**
      * @return string
      */
-    public function getSourceClassName(): string;
+    public function getSourceClassName();
 
     /**
      * @return string
      */
-    public function getDestinationClassName(): string;
+    public function getDestinationClassName();
 
     /**
      * Register an operation to be performed for the given property.
@@ -39,29 +39,29 @@ interface MappingInterface
      *   Return this mapping to allow for chaining.
      */
     public function forMember(
-        string $targetPropertyName,
+        $targetPropertyName,
         $operation
-    ): MappingInterface;
+    );
 
     /**
      * @param string $propertyName
      * @return MappingOperationInterface
      */
-    public function getMappingOperationFor(string $propertyName): MappingOperationInterface;
+    public function getMappingOperationFor($propertyName);
 
     /**
      * Gets all operations that were explicitly defined for this mapping.
      *
      * @return MappingOperationInterface[]
      */
-    public function getRegisteredMappingOperations(): array;
+    public function getRegisteredMappingOperations();
 
     /**
      * Creates a new mapping in the reverse direction.
      *
      * @return MappingInterface
      */
-    public function reverseMap(): MappingInterface;
+    public function reverseMap();
 
     /**
      * Copies another mapping. This means the config and explicitly defined
@@ -78,9 +78,9 @@ interface MappingInterface
      * @throws UnregisteredMappingException
      */
     public function copyFrom(
-        string $sourceClass,
-        string $destinationClass
-    ): MappingInterface;
+        $sourceClass,
+        $destinationClass
+    );
 
     /**
      * @see MappingInterface::copyFrom().
@@ -90,12 +90,12 @@ interface MappingInterface
      */
     public function copyFromMapping(
         MappingInterface $mapping
-    ): MappingInterface;
+    );
 
     /**
      * @return Options
      */
-    public function getOptions(): Options;
+    public function getOptions();
 
     /**
      * Returns a list of properties on the target class that will have to be
@@ -107,7 +107,7 @@ interface MappingInterface
      * @param object $sourceObject
      * @return string[]
      */
-    public function getTargetProperties($targetObject, $sourceObject): array;
+    public function getTargetProperties($targetObject, $sourceObject);
 
     /**
      * =========================================================================
@@ -127,7 +127,7 @@ interface MappingInterface
      */
     public function beConstructedUsing(
         callable $factoryCallback
-    ): MappingInterface;
+    );
 
     /**
      * Retrieves the custom factory callback as set by beConstructedUsing().
@@ -135,7 +135,7 @@ interface MappingInterface
      * @return callable
      * @throws NoConstructorSetException
      */
-    public function getCustomConstructor(): callable;
+    public function getCustomConstructor();
 
     /**
      * Whether or not a custom constructor callback has been provided using
@@ -143,7 +143,7 @@ interface MappingInterface
      *
      * @return bool
      */
-    public function hasCustomConstructor(): bool;
+    public function hasCustomConstructor();
 
     /**
      * Allows overriding of the configuration. The $configurator will be passed
@@ -152,7 +152,7 @@ interface MappingInterface
      * @param callable $configurator
      * @return MappingInterface
      */
-    public function setDefaults(callable $configurator): MappingInterface;
+    public function setDefaults(callable $configurator);
 
     /**
      * Keep in mind that this will override any custom constructor callback set
@@ -160,7 +160,7 @@ interface MappingInterface
      *
      * @return MappingInterface
      */
-    public function skipConstructor(): MappingInterface;
+    public function skipConstructor();
 
     /**
      * Keep in mind that this will override any custom constructor callback set
@@ -168,7 +168,7 @@ interface MappingInterface
      *
      * @return MappingInterface
      */
-    public function dontSkipConstructor(): MappingInterface;
+    public function dontSkipConstructor();
 
     /**
      * Specifies the naming conventions for this mapping.
@@ -180,7 +180,7 @@ interface MappingInterface
     public function withNamingConventions(
         NamingConventionInterface $sourceNamingConvention,
         NamingConventionInterface $destinationNamingConvention
-    ): MappingInterface;
+    );
 
     /**
      * Specifies the default operation for this mapping.
@@ -188,7 +188,7 @@ interface MappingInterface
      * @param MappingOperationInterface $mappingOperation
      * @return MappingInterface
      */
-    public function withDefaultOperation(MappingOperationInterface $mappingOperation): MappingInterface;
+    public function withDefaultOperation(MappingOperationInterface $mappingOperation);
 
     /**
      * Specifies a name resolver to be used for this mapping.
@@ -196,22 +196,22 @@ interface MappingInterface
      * @param NameResolverInterface $nameResolver
      * @return MappingInterface
      */
-    public function withNameResolver(NameResolverInterface $nameResolver): MappingInterface;
+    public function withNameResolver(NameResolverInterface $nameResolver);
 
     /**
      * Registers a custom mapper to be used for this specific mapping.
      *
      * @param MapperInterface $mapper
      */
-    public function useCustomMapper(MapperInterface $mapper): void;
+    public function useCustomMapper(MapperInterface $mapper);
 
     /**
      * @return bool
      */
-    public function providesCustomMapper(): bool;
+    public function providesCustomMapper();
 
     /**
      * @return MapperInterface|null
      */
-    public function getCustomMapper(): ?MapperInterface;
+    public function getCustomMapper();
 }
