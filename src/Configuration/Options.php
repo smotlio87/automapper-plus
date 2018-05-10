@@ -250,7 +250,7 @@ class Options
      * @param string $className
      * @return bool
      */
-    public function isObjectCrate(string $className)
+    public function isObjectCrate($className)
     {
         return isset($this->objectCrates[$className]);
     }
