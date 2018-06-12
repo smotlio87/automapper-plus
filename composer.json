@@ -16,8 +16,8 @@
         }
     },
     "require": {
-        "php": "^5.6.0 || ^7.2.0",
-        "lstrojny/functional-php": "^1.4"
+        "lstrojny/functional-php": "^1.4",
+        "php": "^5.6 || ^7.2"
     },
     "require-dev": {
         "symfony/var-dumper": "^3.3",

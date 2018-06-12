@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f309562b999cbfc7387ac747d31068c4",
+    "content-hash": "0cf41e69674504cbfe635d20331398f1",
     "packages": [
         {
             "name": "lstrojny/functional-php",
@@ -1686,7 +1686,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.6.0"
+        "php": "^5.6 || ^7.2"
     },
     "platform-dev": []
 }
