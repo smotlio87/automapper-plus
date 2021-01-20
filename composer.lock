@@ -1,23 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cf41e69674504cbfe635d20331398f1",
+    "content-hash": "d3b39e79debc9d4b4e8f7823bf3d8c27",
     "packages": [
         {
             "name": "lstrojny/functional-php",
-            "version": "1.4.0",
+            "version": "dev-1.4.0-immofacile",
             "source": {
                 "type": "git",
-                "url": "https://github.com/lstrojny/functional-php.git",
-                "reference": "c2831c48f0cdad1f82b2f735ef417210c1e9490a"
+                "url": "https://github.com/Immo-Facile/functional-php.git",
+                "reference": "c065b49b3a3463e24f964754efc36f6ef62d5eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lstrojny/functional-php/zipball/c2831c48f0cdad1f82b2f735ef417210c1e9490a",
-                "reference": "c2831c48f0cdad1f82b2f735ef417210c1e9490a",
+                "url": "https://api.github.com/repos/Immo-Facile/functional-php/zipball/c065b49b3a3463e24f964754efc36f6ef62d5eda",
+                "reference": "c065b49b3a3463e24f964754efc36f6ef62d5eda",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,11 @@
                     "src/Functional/Zip.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Functional\\Tests\\": "tests/Functional"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -125,7 +129,10 @@
             "keywords": [
                 "functional"
             ],
-            "time": "2016-10-31T22:21:42+00:00"
+            "support": {
+                "source": "https://github.com/Immo-Facile/functional-php/tree/1.4.0-immofacile"
+            },
+            "time": "2021-01-20T10:50:12+00:00"
         }
     ],
     "packages-dev": [
@@ -684,6 +691,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2017-12-04T08:55:13+00:00"
         },
         {
@@ -825,6 +833,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-06-30T09:13:00+00:00"
         },
         {
@@ -1682,11 +1691,16 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "lstrojny/functional-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^5.6 || ^7.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.2.33"
+    }
 }
